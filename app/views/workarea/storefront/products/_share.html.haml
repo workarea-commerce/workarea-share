@@ -1,0 +1,1 @@
+= render 'workarea/storefront/shares/share_buttons', share_url: share_product_url(product, sku: product.options[:sku]), image: product_image_url(product.primary_image, :detail), message: t('workarea.storefront.products.share_message', title: product.browser_title, site: Workarea.config.site_name)

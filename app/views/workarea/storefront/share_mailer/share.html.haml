@@ -1,0 +1,21 @@
+= append_partials('storefront.share_mailer.top')
+
+- content_for :preheader_text do
+  = @content
+
+%tr
+  %td
+    %h1= @content
+    %p
+      %strong= @share.from
+    %p= t('workarea.storefront.email.share.from_info_html')
+
+    %p= link_to @share.title, path_to_url(@share.url)
+
+    - if @share.message.present?
+      %p 
+        %strong #{@share.from} #{t('workarea.storefront.email.share.from_message_html')}
+      %p= @share.message
+
+
+= append_partials('storefront.share_mailer.bottom')

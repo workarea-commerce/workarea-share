@@ -1,0 +1,30 @@
+en:
+  workarea:
+    storefront:
+      email:
+        share:
+          subject: A Message from %{from}
+          from_info_html: thought you might be interested in this.
+          from_info_text: thought you might be interested in this.
+          from_message_html: says
+          from_message_text: says
+      flash_messages:
+        share_message_sent: Thanks for sharing! An email has been sent to %{recipient}.
+      products:
+        share_message: Check out %{title} from %{site}
+      shares:
+        share_on_facebook: Share on Facebook
+        share_on_twitter: Tweet on Twitter
+        share_on_pinterest: Pin it on Pinterest
+        share_by_email: Share by Email
+        from: From
+        to: To
+        name: Name
+        email: Email
+        from_name_placeholder: Your Name
+        from_email_placeholder: Your Email
+        to_name_placeholder: Friend's Name
+        to_email_placeholder: Friend's Email
+        message: Message
+        message_placeholder: Add a personal message
+        send_email: Send Email

@@ -1,0 +1,14 @@
+#share-buttons.style-guide__subsection
+
+  %h3= link_to_style_guide('components', 'share_buttons')
+
+  %p Displays a list of sharing links as a row of icons that reflow to fit the container width.
+
+  %p Link actions progressively enhanced by the <code>WORKAREA.popupButtons</code> module.
+
+  .style-guide__example-block
+    %ul.share-buttons
+      %li.share-buttons__item= link_to 'Share on Facebook', 'https://www.facebook.com/sharer/sharer.php', class: 'share-buttons__button icon icon--facebook', title: 'Share on Facebook', target: '_blank', data: { popup_button: '' }
+      %li.share-buttons__item= link_to 'Tweet on Twitter', 'https://twitter.com/intent/tweet', class: 'share-buttons__button icon icon--twitter', title: 'Tweet on Twitter', target: '_blank', data: { popup_button: '' }
+      %li.share-buttons__item= link_to 'Pin It on Pinterest', 'https://pinterest.com/pin/create/button/', class: 'share-buttons__button icon icon--pinterest', title: 'Pin It on Pinterest', target: '_blank', data: { popup_button: '' }
+      %li.share-buttons__item= link_to 'Share by Email', new_share_url(url: root_url, title: 'This is the message.'), class: 'share-buttons__button icon icon--envelope', rel: 'nofollow', title: 'Share by Email', data: { dialog_button: '' }
