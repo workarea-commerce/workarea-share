@@ -33,7 +33,7 @@ Features
 
 ### Easy customizability
 
-Change the maximum length of the message of the sent email via `Workarea.config.max_email_share_message_length`. Customize the sharable offerings by editing `views/workarea/storefront/shares/_share_buttons.html.haml`
+Change the maximum length of the message of the sent email via Admin configuration page. Customize the sharable offerings by editing `views/workarea/storefront/shares/_share_buttons.html.haml`
 
 ### reCAPTCHA
 
