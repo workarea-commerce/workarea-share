@@ -13,7 +13,7 @@ module Workarea
     validates :to_email, presence: true, email: true
     validates :from_email, presence: true, email: true
     validates :message, length: {
-      maximum: Workarea.config.max_email_share_message_length
+      maximum: :max_email_share_message_length
     }
     validates :url, presence: true
 
@@ -21,6 +21,10 @@ module Workarea
     before_validation :sanitize_url
 
     private
+
+    def max_email_share_message_length
+      Workarea.config.max_email_share_message_length
+    end
 
     def uri
       URI.parse(url)
