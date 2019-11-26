@@ -1,5 +1,5 @@
 module Workarea
   module Share
-    VERSION = '1.3.0.pre'.freeze
+    VERSION = '1.3.0'.freeze
   end
 end
