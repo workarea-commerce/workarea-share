@@ -32,7 +32,7 @@ module Workarea
         end
 
         assert_includes(email.to, to_email)
-        assert_match(email.from.first, Workarea.config.email_from)
+        assert(email.from.any? { |e| Workarea.config.email_from.include?(e) })
         assert_includes(email.reply_to, from_email)
       end
     end
