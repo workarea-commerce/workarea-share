@@ -1,3 +1,21 @@
+Workarea Share 1.3.1 (2020-02-05)
+--------------------------------------------------------------------------------
+
+*   Make sharing integration test more permissive
+
+    It was reported that, when Haven Theme is installed in an app, the
+    `Workarea::Storefront::SharingIntegrationTest` begins to fail. The test
+    was previously testing if the value of`Workarea.config.email_from`
+    against an array of defined emails. However, since this configuration
+    can, and was, being set to a string containing more than just a simple
+    email address, the test was updated to look for the given email
+    substring within the configration value.
+
+    SHARELINKS-3
+    Curt Howard
+
+
+
 Workarea Share 1.2.4 (2019-08-21)
 --------------------------------------------------------------------------------
 
