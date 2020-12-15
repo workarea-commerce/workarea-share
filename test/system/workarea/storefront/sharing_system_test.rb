@@ -6,27 +6,25 @@ module Workarea
       include Storefront::SystemTest
 
       def test_sharing_through_email
-        Recaptcha.with_configuration(site_key: '12345') do
-          from_email = 'bcrouse@workarea.com'
-          to_name = 'Ben Crouse'
-          to_email = 'bcrouse-friend@workarea.com'
+        from_email = 'bcrouse@workarea.com'
+        to_name = 'Ben Crouse'
+        to_email = 'bcrouse-friend@workarea.com'
 
-          product = create_product(
-            name: 'Integration Product',
-            variants: [{ sku: 'SKU1', regular: 10.to_m }]
-          )
+        product = create_product(
+          name: 'Integration Product',
+          variants: [{ sku: 'SKU1', regular: 10.to_m }]
+        )
 
-          visit storefront.product_path(product)
-          click_link 'Share by Email'
+        visit storefront.product_path(product)
+        click_link 'Share by Email'
 
-          fill_in 'to_name', with: to_name
-          fill_in 'to_email', with: to_email
-          fill_in 'from_email', with: from_email
-          fill_in 'message', with: 'test message'
-          click_button 'email_friend'
+        fill_in 'to_name', with: to_name
+        fill_in 'to_email', with: to_email
+        fill_in 'from_email', with: from_email
+        fill_in 'message', with: 'test message'
+        click_button 'email_friend'
 
-          assert(page.has_content?("Thanks for sharing! An email has been sent to #{to_name} (#{to_email})."))
-        end
+        assert(page.has_content?("Thanks for sharing! An email has been sent to #{to_name} (#{to_email})."))
       end
 
       def test_announcing_share_event

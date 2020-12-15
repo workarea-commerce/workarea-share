@@ -7,7 +7,10 @@ module Workarea
       end
 
       def create
-        if verify_recaptcha(model: @share, env: Rails.env) && @share.save
+        if invalid_recaptcha?(action: 'share')
+          challenge_recaptcha!
+          render :new, status: 422
+        elsif @share.save
           flash[:success] = t(
             'workarea.storefront.flash_messages.share_message_sent',
             recipient: @share.friendly_to

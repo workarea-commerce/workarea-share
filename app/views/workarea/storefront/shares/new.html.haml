@@ -43,7 +43,7 @@
         %span.property__requirement.property__requirement--optional= t('workarea.storefront.forms.optional')
       .value= text_area_tag 'message', @share.message, class: 'text-box text-box--multi-line text-box--wide', placeholder: t('workarea.storefront.shares.message_placeholder'), maxlength: Workarea.config.max_email_share_message_length
 
-    .property= recaptcha_tags
+    .property= recaptcha(action: 'share')
 
     .grid.grid--auto
       %p.grid__cell= button_tag t('workarea.storefront.forms.send'), value: 'email_friend', class: 'button'
